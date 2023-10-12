@@ -3,7 +3,10 @@
 
 * NOT gate
 .subckt NOT A Q Vdd Vss
+   * PMOS section 
    xMP1 Q A Vdd Vdd pmos1v l=L w=W
+
+   * NMOS section
    xMN2 Q A Vss Vss nmos1v l=L w=W
 .ends NOT
 
@@ -22,6 +25,17 @@
 .subckt AND A B Q Vdd Vss
    xNAND A B intermediate Vdd Vss NAND
    xNOT intermediate Q Vdd Vss NOT
-.ends
+.ends AND
+
+* NOR gate 
+.subckt NOR A B Q Vdd Vss
+   * PMOS section
+   xMP1 Vdd A 1 Vdd pmos1v l=L w=W
+   xMP2 1 B Q 1 pmos1v l=L w=W
+
+   * NMOS section
+   xMN1 Q A 1 1 nmos1v l=L w=W
+   xMN2 Q B Vss Vss nmos1v l=L w=W
+.ends NOR
 
 
