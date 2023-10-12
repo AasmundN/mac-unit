@@ -18,4 +18,10 @@
    xMN2 1 A Vss Vss nmos1v l=L w=W
 .ends NAND
 
+* AND gate
+.subckt AND A B Q Vdd Vss
+   xNAND A B intermediate Vdd Vss NAND
+   xNOT intermediate Q Vdd Vss NOT
+.ends
+
 
