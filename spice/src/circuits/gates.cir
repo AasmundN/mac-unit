@@ -38,4 +38,10 @@
    xMN2 Q B Vss Vss nmos1v l=L w=W
 .ends NOR
 
+* OR gate
+.subckt OR A B Q Vdd Vss
+   xNOR A B intermediate Vdd Vss NOR
+   xNOT intermediate Q Vdd Vss NOT
+.ends OR
+
 
