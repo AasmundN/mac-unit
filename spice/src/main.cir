@@ -1,0 +1,23 @@
+* main circuit file
+.option gmin=1e-39
+
+* includes
+.include includes.cir
+
+* params
+.param Vdd = 1
+
+* circuit
+Vdd Vdd 0 dc Vdd
+Vin 1 0 dc 1
+
+xNOT1 1 2 Vdd 0 NOT
+
+* plots
+.plot v(2)
+
+* analasys
+.dc Vin 0 1 0.02
+
+
+

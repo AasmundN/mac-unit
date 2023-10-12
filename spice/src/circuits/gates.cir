@@ -1,0 +1,8 @@
+.param L = 0.1u
+.param W = 1u
+
+* NOT gate
+.subckt NOT A Q Vdd Vss
+   xMP1 Q A Vdd Vss pmos1v l=L w=W
+   xMN2 Q A Vss Vss nmos1v l=L w=W
+.ends

@@ -1,0 +1,46 @@
+.param s1v_rs_ne=0.000000e+000 s1v_vsat_ne=1.120000e+005 s1v_pldd_surf=6.000000e+019 s1v_uc1_ne=3.700000e-010 s1v_u0_ne=2.600000e-002
++ s1v_nch_ne=4.680000e+017 s1v_rsc_ne=4.082483e-014 s1v_cgbo_ne=1.482000e-011 s1v_prt_ne=1.000000e+001 s1v_rdc_ne=4.082483e-014
++ s1v_vth0_ne=1.518852e-001 s1v_k2_ne=0.000000e+000 s1v_cgdo_ne=2.667600e-010 s1v_ckappa_ne=4.605336e+000 s1v_wint_ne=5.400000e-009 
++ s1v_k1_ne=2.825346e-001 s1v_cgsl_ne=1.111500e-010 s1v_nldd_surf=3.000000e+019 s1v_js_ne=3.366667e-006 s1v_hdif_ne=1.400000e-007 s1v_rdsw_ne=3.900000e-006
++ s1v_jsw_ne=3.366667e-010 s1v_tox_ne=2.097000e-009 s1v_cj_ne=7.983537e-004 s1v_cjsw_ne=4.790122e-011 s1v_ldif_ne=1.000000e-008 s1v_xj_ne=2.500000e-008
++ s1v_rd_ne=0.000000e+000 s1v_pb_ne=9.918524e-001 s1v_cf_ne=4.594612e-011 s1v_lint_ne=1.650000e-008 s1v_cjswg_ne=1.995884e-011 s1v_rsh_ne=1.000000e+001
++ s1v_u0_pe=8.400000e-003 s1v_nch_pe=4.400000e+017 s1v_rsc_pe=2.886751e-014 s1v_cgbo_pe=1.392363e-011 s1v_rdc_pe=2.886751e-014 s1v_vth0_pe=-1.491351e-001
++ s1v_k2_pe=0.000000e+000 s1v_cgdo_pe=2.506253e-010 s1v_ckappa_pe=1.043477e+001 s1v_wint_pe=5.500000e-009 s1v_k1_pe=2.637520e-001 s1v_cgsl_pe=1.044272e-010
++ s1v_js_pe=3.350000e-006 s1v_hdif_pe=1.400000e-007 s1v_rdsw_pe=7.800000e-006 s1v_jsw_pe=3.350000e-010 s1v_tox_pe=2.728000e-009 s1v_cj_pe=7.912252e-004 
++ s1v_cjsw_pe=4.747351e-011 s1v_ldif_pe=1.000000e-008 s1v_xj_pe=2.500000e-008 s1v_rd_pe=0.000000e+000 s1v_pb_pe=1.009805e+000 s1v_cf_pe=4.527118e-011 
++ s1v_lint_pe=1.350000e-008 s1v_cjswg_pe=1.978063e-011 s1v_rsh_pe=2.000000e+001 s1v_rs_pe=0.000000e+000 s1v_vsat_pe=1.000000e+005 
++ gleak_scale=1.0 s1v_nat_vth0_ne=0.018852e-001 s1v_nat_k1_ne=2.825346e-002 pvt_mc=0 pu0_mc=0 pltw_mc=0
+.subckt nmos1v d g s b param: l=0.1u w=10u simm=1 nrd={s1v_hdif_ne/w} nrs={s1v_hdif_ne/w} as=1p ad=1p ps=1u pd=1u garea={w*l}
++ maforward={2.5e3*garea*gleak_scale} mareverse={.03*maforward} varvt=0.004 geo_fac={0.7071/sqrt(l*w*simm*1e12)} mm_delvt={varvt*geo_fac*pvt_mc}
++ mm_mu0={1-(0.005*geo_fac*pu0_mc)} mm_dl={2e-03*geo_fac*l*pltw_mc} mm_dw={-24e-03*geo_fac*w*pltw_mc} mm_dtox={2e-03*geo_fac*s1v_tox_ne*pltw_mc}
+m1 d g s b gpdk090_nmos1v_x w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs
+.model gpdk090_nmos1v_x nmos level=18 lmin=0 lmax=1 wmin=0 wmax=1 tnom=25 version=3.2 tox={s1v_tox_ne+mm_dtox} toxm={s1v_tox_ne+mm_dtox} xj=s1v_xj_ne
++ nch=s1v_nch_ne lln=1 lwn=1 wln=1 wwn=-1 lint=s1v_lint_ne ll=0 lw=0 lwl=0 wint=s1v_wint_ne wl=0 ww=0 wwl=0 mobmod=1 binunit=2 dwg=0.00 
++ dwb=0 rsh=s1v_rsh_ne vth0={s1v_vth0_ne+mm_delvt} k1=s1v_k1_ne k2=s1v_k2_ne k3=-2.3 dvt0=3.86366 dvt1=1.2 dvt2=5.0299990e-2 dvt0w=0 dvt1w=0
++ dvt2w=0 nlx=1.2517999e-7 w0={-7.1353e-9} k3b=0.5576769 ngate=4e20 vsat=s1v_vsat_ne ua={-6.18795e-10} ub=1.8806652e-18 uc=1.3823546e-10
++ rdsw=s1v_rdsw_ne prwb=0 prwg=0 wr=1 u0={s1v_u0_ne*mm_mu0} a0=2.375 keta={-3.1429991e-2} a1=0 a2=0.99 ags=0.89 b0=0 b1=0 voff={-9.6776e-2}
++ nfactor=1.02 cit={-8.6656060e-4} cdsc=4.446e-2 cdscb=1.056511e-2 cdscd=0 eta0=7.658e-2 etab={-3.4998e-2} dsub=0.22 pclm=1.5488822 pdiblc1=0
++ pdiblc2=2.4648249e-2 pdiblcb=0 drout=0 pscbe1=9.26482e8 pscbe2=1e-20 pvag=0 delta=7.5e-3 alpha0=0 alpha1=0.0177 beta0=6.3203 kt1=-0.13 kt2=-0.042
++ at=9e4 ute=-1.730356 ua1=1.8035814e-9 ub1={-2.1874742e-18} uc1=s1v_uc1_ne kt1l=0 prt=s1v_prt_ne cj=s1v_cj_ne mj=0.222 pb=s1v_pb_ne cjsw=s1v_cjsw_ne
++ mjsw=0.01 pbsw=0.1 cjswg=s1v_cjswg_ne mjswg=0.5028 pbswg=0.6859 tpb=1.3e-3 tpbsw=0 tpbswg=2.81e-3 tcj=7.61e-4 tcjsw=1.04e-3 tcjswg=1.63e-3
++ js=s1v_js_ne jsw=s1v_jsw_ne xti=3 cgdo=s1v_cgdo_ne cgso=s1v_cgdo_ne cgbo=s1v_cgbo_ne capmod=2 elm=5 xpart=1 cgsl=s1v_cgsl_ne cgdl=s1v_cgsl_ne
++ ckappa=s1v_ckappa_ne cf=s1v_cf_ne clc=1e-7 cle=0.6 dlc=1.89e-8 dwc=1.62e-8 llc=1.53e-16 lwc={-9e-16} wlc=0 wwc=-0.0989 lwlc=0 wwlc=0 acde=0.5 moin=10.5
++ noff=1.85 voffcv=-0.048 lvoffcv=2e-9 ijth=1 noia=1e+19 noib=2e+4 noic=1e-13 ef=1 noimod=2 em=4e+7
+.ends
+.subckt pmos1v d g s b param: l=0.1u w=10u simm=1 nrd={s1v_hdif_pe/w} nrs={s1v_hdif_pe/w} as=1p ad=1p ps=1u pd=1u garea={w*l}
++ maforward={1.6e3*garea*gleak_scale} mareverse={.03*maforward} varvt=0.003 geo_fac={0.7071/sqrt(l*w*simm*1e12)} mm_delvt={varvt*geo_fac*pvt_mc}
++ mm_mu0={1-(0.005*geo_fac*pu0_mc)} mm_dl={2e-3*geo_fac*l*pltw_mc} mm_dw={-24e-3*geo_fac*w*pltw_mc} mm_dtox={2e-3*geo_fac*s1v_tox_pe*pltw_mc}
+m1 d g s b gpdk090_pmos1v_x w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs
+.model gpdk090_pmos1v_x pmos level=18 lmin=0 lmax=1 wmin=0 wmax=1 tnom=25 version=3.2 tox={s1v_tox_pe+mm_dtox} toxm={s1v_tox_pe+mm_dtox} xj=s1v_xj_pe
++ nch=1.7200001e17 lln=1 lwn=1 wln=1 wwn=-1 lint=s1v_lint_pe ll=0 lw=0 lwl=0 wint=s1v_wint_pe wl=0 ww=0 wwl=0 mobmod=1 binunit=2 dwg=0 dwb=0 rsh=s1v_rsh_pe
++ vth0={s1v_vth0_pe+mm_delvt} pvth0=0 k1=s1v_k1_pe k2=s1v_k2_pe k3=-0.5 dvt0=8 dvt1=2.07 dvt2=0.1 dvt0w=0 dvt1w=0 dvt2w=0 nlx=2.24e-7 w0=0 k3b=7e-2
++ ngate=9.32e19 vsat=s1v_vsat_pe ua={-2.7643932e-10} ub=2.2546092e-18 uc=1.6265005e-10 rdsw=s1v_rdsw_pe prwb=0 prwg=0 wr=1 u0={s1v_u0_pe*mm_mu0} a0=2.9669099
++ keta={-8.2015020e-2} a1=0 a2=1 ags=1.2279299 b0=0 b1=0 voff=-0.1170768 nfactor=1 cit={-2.5695576e-3} cdsc=0 cdscb=0 cdscd=0 eta0=5e-2 leta0=0 etab=0 dsub=0.3
++ pclm=1 pdiblc1=6e-3 pdiblc2=5e-3 pdiblcb=-0.5267781 drout=0 pscbe1=5.13e8 pscbe2=4.89e-7 pvag=0 delta=9.9999990e-3 alpha0=0 alpha1=0.001 beta0=7.6 kt1=-0.11
++ kt2=4.4329650e-2 at=1e4 ute=-1.4468272 ua1=1.2158887e-9 ub1={-4.0489830e-18} uc1={-5.6549980e-10} kt1l=0 prt=0 cj=s1v_cj_pe mj=0.331 pb=s1v_pb_pe
++ cjsw=s1v_cjsw_pe mjsw=0.01 pbsw=0.10 cjswg=s1v_cjswg_pe mjswg=0.7833 pbswg=0.8137 tpb=0.00173 tpbsw=0 tpbswg=0.0044 tcj=0.000949
++ tcjsw=0.0000758 tcjswg=0.00388 js=s1v_js_pe jsw=s1v_jsw_pe xti=3 cgdo=s1v_cgdo_pe cgso=s1v_cgdo_pe cgbo=s1v_cgbo_pe capmod=2 elm=5
++ xpart=1 cgsl=s1v_cgsl_pe cgdl=s1v_cgsl_pe ckappa=s1v_ckappa_pe cf=s1v_cf_pe clc=1e-7 cle=0.6 dlc=2.252e-8 dwc=1.2404e-8 llc={-1.2e-16}
++ lwc={-6.2e-16} wlc=0 wwc=-0.15 lwlc=0 wwlc=0 acde=0.5 moin=15.6 noff=2.16 voffcv=-0.0385 lvoffcv={-3.8e-9} lnoff=7.5e-8 ijth=1
++ noia=1e+19 noib=2e+3 noic=1e-11 ef=1.1 noimod=2 em=1e+8
+.ends

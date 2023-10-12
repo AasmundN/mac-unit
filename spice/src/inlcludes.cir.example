@@ -1,0 +1,5 @@
+* include 90nm transistor model
+.include [ absolute path to model file ]
+
+* include gate subcircuits
+.include [ absolute path to gates file ]
