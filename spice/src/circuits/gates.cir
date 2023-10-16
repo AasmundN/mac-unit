@@ -56,9 +56,10 @@
    xNOT A Q Vdd Vss NOT
 
    * PMOS section
-   xMP1 A Q Vss Vdd pmos1v l=L w=W
+   xMP1 IN Q OUT Vdd pmos1v l=L w=W
 
    * NMOS section
-   xMN1 Vss A IN Vss nmos1v l=L w=W
-.ends TRANSMISSIONGATE
+   xMN1 OUT A IN Vss nmos1v l=L w=W
 
+   * NOTE: A load resistor must be attached to OUT for the circuit to work properly.
+.ends TRANSMISSIONGATE
