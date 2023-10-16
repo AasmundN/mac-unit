@@ -50,4 +50,10 @@
    xAND2 C intermediate Q Vdd Vss AND
 .ends
 
+* 3OR gate
+.subckt 3OR A B C Q Vdd Vss
+   xOR1 A B intermediate Vdd Vss OR
+   xOR2 C intermediate Q Vdd Vss OR
+.ends
+
 
