@@ -47,13 +47,13 @@
 * 3AND gate
 .subckt 3AND A B C Q Vdd Vss
    xAND1 A B intermediate Vdd Vss AND
-   xAND2 C intermediate Q Vdd Vss AND
+   xAND2 intermediate C Q Vdd Vss AND
 .ends
 
 * 3OR gate
 .subckt 3OR A B C Q Vdd Vss
    xOR1 A B intermediate Vdd Vss OR
-   xOR2 C intermediate Q Vdd Vss OR
+   xOR2 intermediate C Q Vdd Vss OR
 .ends
 
 
