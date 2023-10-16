@@ -34,7 +34,7 @@
    xMP2 1 B Q 1 pmos1v l=L w=W
 
    * NMOS section
-   xMN1 Q A 1 1 nmos1v l=L w=W
+   xMN1 Q A Vss Vss nmos1v l=L w=W
    xMN2 Q B Vss Vss nmos1v l=L w=W
 .ends NOR
 
