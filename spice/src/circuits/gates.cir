@@ -44,4 +44,10 @@
    xNOT intermediate Q Vdd Vss NOT
 .ends OR
 
+* 3AND gate
+.subckt 3AND A B C Q Vdd Vss
+   xAND1 A B intermediate Vdd Vss AND
+   xAND2 C intermediate Q Vdd Vss AND
+.ends
+
 
