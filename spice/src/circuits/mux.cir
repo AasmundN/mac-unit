@@ -1,0 +1,16 @@
+* MUX subcircuit
+.subckt MUX A B C S1 S2 OUT Vdd Vss
+   * AND gates
+   x3AND1 1 2 A 5 Vdd Vss 3AND
+   x3AND2 S1 3 B 6 Vdd Vss 3AND
+   x3AND3 4 S2 C 7 Vdd Vss 3AND
+
+   * OR gate
+   x3OR 5 6 7 OUT Vdd Vss 3OR
+
+   * NOT gates
+   xNOT1 S1 1 Vdd Vss NOT
+   xNOT2 S2 2 Vdd Vss NOT
+   xNOT3 S2 3 Vdd Vss NOT
+   xNOT4 S1 4 Vdd Vss NOT
+.ends
