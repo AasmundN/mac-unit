@@ -5,19 +5,22 @@
 .include includes.cir
 
 * params
-.param Vdd = 1
+.param supplyVoltage = 1
 
 * circuit
-Vdd Vdd 0 dc Vdd
-Vin 1 0 dc 1
+Vdd Vdd 0 supplyVoltage
 
-xNOT1 1 2 Vdd 0 NOT
+Va A 0 PULSE(0, supplyVoltage, 10n, 1n, 1n, 10n, 30n)
+Vb B 0 PULSE(0, supplyVoltage, 5n, 1n, 1n, 10n, 30n)
+Vc C 0 PULSE(0, supplyVoltage, 0n, 1n, 1n, 10n, 30n)
+
+x3AND A B C Q Vdd 0 3AND
 
 * plots
-.plot v(2)
+.plot v(Q) V(A) V(B) V(C)
 
 * analasys
-.dc Vin 0 1 0.02
+.tran 1n 60n
 
 
 
