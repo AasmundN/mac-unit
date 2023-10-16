@@ -50,4 +50,15 @@
    xAND2 C intermediate Q Vdd Vss AND
 .ends
 
+* Transmission gate
+.subckt TRANSMISSIONGATE IN OUT A Vdd Vss
+   * NOT gate
+   xNOT A Q Vdd Vss NOT
+
+   * PMOS section
+   xMP1 A Q Vss Vdd pmos1v l=L w=W
+
+   * NMOS section
+   xMN1 Vss A IN Vss nmos1v l=L w=W
+.ends TRANSMISSIONGATE
 
