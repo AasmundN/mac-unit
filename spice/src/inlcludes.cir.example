@@ -3,3 +3,6 @@
 
 * include gate subcircuits
 .include [ absolute path to gates file ]
+
+* include mux subcircuit
+.include [ absolute path to mux file ]
