@@ -25,6 +25,3 @@ xMUX A B C S1 S2 OUT Vdd 0 MUX
 
 * analasys
 .tran 1n 60n
-
-
-
