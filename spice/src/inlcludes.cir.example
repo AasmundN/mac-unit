@@ -6,3 +6,6 @@
 
 * include mux subcircuit
 .include [ absolute path to mux file ]
+
+* include d-latch subcircuit
+.include [ absolute path to d-latch file ]

@@ -7,21 +7,25 @@
 * params
 .param supplyVoltage = 1
 
-* * MUX test
+* MUX test
 Vdd Vdd 0 supplyVoltage
 
 Va A 0 0
 Vb B 0 0
 Vc C 0 supplyVoltage
 
-VS1 S1 0 PULSE(0, supplyVoltage, 13n, 1n, 1n, 7n, 20n)
-VS2 S2 0 PULSE(0, supplyVoltage, 10n, 1n, 1n, 10n, 30n)
+V_D D 0 PULSE(0, supplyVoltage, 13n, 1n, 1n, 7n, 20n)
+V_CLK CLK 0 PULSE(0, supplyVoltage, 0n, 1n, 1n, 10n, 20n)
 
-xMUX A B C S1 S2 OUT Vdd 0 MUX
+xD_LATCH D NOT_Q CLK Vdd 0 D_LATCH
+xNOT NOT_Q Q Vdd 0 NOT
+
 
 * plots
-.plot v(OUT) v(S1) v(S2)
-.plot v(OUT)
+.plot v(Q) v(D) v(CLK)
+.plot v(Q)
+.plot v(CLK)
+.plot v(D)
 
 * analasys
 .tran 1n 60n
