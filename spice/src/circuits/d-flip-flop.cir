@@ -1,0 +1,13 @@
+* d-flip-flop
+.subckt D_FLIP_FLOP D Q CLK Vdd Vss
+   * create inverted clock signal
+   xNOT1 CLK NOT_CLK Vdd Vss NOT
+
+   * not gates
+   xNOT2 D 1 Vdd Vss NOT
+   xNOT3 2 Q Vdd Vss NOT
+
+   * latches
+   xD_LATCH1 1 NOT_QM NOT_CLK CLK Vdd Vss D_LATCH
+   xD_LATCH2 NOT_QM 2 CLK NOT_CLK Vdd Vss D_LATCH
+.ends
