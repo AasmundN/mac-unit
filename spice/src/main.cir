@@ -1,5 +1,5 @@
 * main circuit file
-*.option gmin=1e-39
+.option gmin=1e-39
 
 * includes
 .include includes.cir
@@ -7,19 +7,21 @@
 * params
 .param supplyVoltage = 1
 
-* circuit
-Vdd Vdd GND supplyVoltage
-R1 OUT GND 1k
-V_CONTROL CONTROL GND PULSE(0, supplyVoltage, 0, 1n, 1n, 20n, 40n)
-V_IN IN GND PULSE(0, supplyVoltage, 10n, 1n, 1n, 10n, 20n)
+* * MUX test
+Vdd Vdd 0 supplyVoltage
 
-xTRANSMISSIONGATE IN OUT CONTROL Vdd GND
+Va A 0 0
+Vb B 0 0
+Vc C 0 supplyVoltage
+
+VS1 S1 0 PULSE(0, supplyVoltage, 13n, 1n, 1n, 7n, 20n)
+VS2 S2 0 PULSE(0, supplyVoltage, 10n, 1n, 1n, 10n, 30n)
+
+xMUX A B C S1 S2 OUT Vdd 0 MUX
 
 * plots
-.plot V(IN) V(OUT) V(CONTROL)  
+.plot v(OUT) v(S1) v(S2)
+.plot v(OUT)
 
 * analasys
-*.tran 1n 60n
-
-
-
+.tran 1n 60n
