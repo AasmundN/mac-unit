@@ -1,0 +1,10 @@
+* d-latch
+.subckt D_LATCH D NOT_Q CLK NOT_CLK Vdd Vss
+   * not gates
+   xNOT2 1 NOT_Q Vdd Vss NOT
+   xNOT3 NOT_Q 2 Vdd Vss NOT
+
+   * transmission gates
+   xTRANDSMISSION_GATE1 D 1 CLK NOT_CLK Vdd Vss TRANSMISSION_GATE
+   xTRANDSMISSION_GATE2 2 3 NOT_CLK CLK Vdd Vss TRANSMISSION_GATE
+.ends
