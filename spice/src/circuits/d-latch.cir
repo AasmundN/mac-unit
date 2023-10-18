@@ -1,8 +1,5 @@
 * d-latch
-.subckt D_LATCH D NOT_Q CLK Vdd Vss
-   * create inverted clock signal
-   xNOT1 CLK NOT_CLK Vdd Vss NOT
-
+.subckt D_LATCH D NOT_Q CLK NOT_CLK Vdd Vss
    * not gates
    xNOT2 1 NOT_Q Vdd Vss NOT
    xNOT3 NOT_Q 2 Vdd Vss NOT
