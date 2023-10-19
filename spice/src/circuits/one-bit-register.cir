@@ -1,0 +1,13 @@
+* one bit register
+.subckt ONE_BIT_REGISTER IN OUT EN RESET CLK Vdd Vss
+   * d-flip-flop
+   xD_FLIP_FLOP D OUT CLK Vdd Vss D_FLIP_FLOP 
+
+   * MUX
+   xMUX OUT IN Vss S1 S2 D Vdd Vss MUX
+
+   * control logic
+   .connect RESET S2
+   xAND 1 EN S1 Vdd Vss AND
+   xNOT RESET 1 Vdd Vss NOT
+.ends
