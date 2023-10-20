@@ -1,14 +1,4 @@
-// Code example:
-
-module and_gate (
-  input wire A, // Input A
-  input wire B, // Input B
-  output wire Y // Output Y
-);
-
-  assign Y = A & B; // AND operation
-
-endmodule
+`include "C:\Users\Mori\Documents\Code\ICProsjekt\verilog\hdl\and.v"
 
 module testbench;
 
@@ -25,6 +15,9 @@ module testbench;
 
   // Stimulus generation
   initial begin
+
+    $dumpfile("and.vcd");
+
     A = 0; B = 0;
     #10; // Wait for 10 time units
     A = 0; B = 1;
