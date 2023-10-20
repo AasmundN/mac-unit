@@ -5,25 +5,31 @@
 .include includes.cir
 
 * params
-.param supplyVoltage = 0.4
+.param supplyVoltage = 0.6
 
-* MUX test
+.param clockPeriod = 10n
+.param clockHigh = 5n
+
+.param riseTime = 0.1n
+.param fallTime = 0.1N
+
+* supply signals
 Vdd Vdd 0 supplyVoltage
+V_CLK CLK 0 PULSE(0, supplyVoltage, 0n, riseTime, fallTime, clockHigh, clockPeriod)
 
-Va A 0 0
-Vb B 0 0
-Vc C 0 supplyVoltage
+V_IN IN 0 PULSE(0, supplyVoltage, 7n, riseTime, fallTime, 14n, 30n)
 
-V_D D 0 PULSE(0, supplyVoltage, 4n, 1n, 1n, 4n, 13n)
-V_CLK CLK 0 PULSE(0, supplyVoltage, 0n, 1n, 1n, 10n, 20n)
+V_EN EN 0 PULSE(0, supplyVoltage, 17n, riseTime, fallTime, 56n, 80n)
+V_RESET RESET 0 PULSE(0, supplyVoltage, 64n, riseTime, fallTime, 30n, 120n)
 
-xD_FLIP_FLOP D Q CLK Vdd 0 D_FLIP_FLOP
+xONE_BIT_REGISTER IN OUT EN RESET CLK Vdd 0 ONE_BIT_REGISTER
 
 * plots
-.plot v(Q) v(D) v(CLK)
-.plot v(Q)
 .plot v(CLK)
-.plot v(D)
+.plot v(IN)
+.plot v(OUT)
+.plot v(RESET)
+.plot v(EN)
 
 * analasys
-.tran 1n 60n
+.tran 0.05n 120n
