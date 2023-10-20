@@ -17,6 +17,7 @@ module testbench;
   initial begin
 
     $dumpfile("and.vcd");
+    $dumpvars(0, testbench);
 
     A = 0; B = 0;
     #10; // Wait for 10 time units

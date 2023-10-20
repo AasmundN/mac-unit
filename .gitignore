@@ -4,3 +4,6 @@ includes.cir
 main.windows.cir
 *.csv
 *.log
+
+*.vcd
+*.out
