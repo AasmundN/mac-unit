@@ -7,8 +7,8 @@ import numpy as np
 DATA_FILE_PATH = ""
 
 # CONSTANTS
-VDD = 0.4
-PERIOD = 20e-9
+VDD = 0.6
+PERIOD = 10e-9
 GRAPH_SHIFT = 0.1
 
 # GET DATA FROM FILE
@@ -46,7 +46,10 @@ plt.xticks(
     [f"{period}" for period in range(CLOCK_PERIODS)],
 )
 
-plt.title("Timing diagram")
-plt.xlabel(f"Clock period")
+plt.title(
+    "ONE-BIT-REGISTER : " + r"$T_{CLK}$" + f" = {PERIOD}s" + " : "
+    r"$Vdd$" + f" = {VDD}V" + " : SS"
+)
+plt.xlabel("Clock rising edge")
 
 plt.show()
