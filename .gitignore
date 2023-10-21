@@ -5,5 +5,4 @@ main.windows.cir
 *.csv
 *.log
 
-*.vcd
 *.out
