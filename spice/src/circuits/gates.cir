@@ -1,5 +1,5 @@
-.param L = 0.1u
-.param W = 10u
+.param L = 300n 
+.param W = 1500n
 
 * NOT gate
 .subckt NOT A Q Vdd Vss
@@ -63,6 +63,4 @@
 
    * NMOS section
    xMN1 OUT A IN Vss nmos1v l=L w=W
-
-   * NOTE: A load resistor must be attached to OUT for the circuit to work properly.
 .ends TRANSMISSION_GATE

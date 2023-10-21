@@ -12,3 +12,6 @@
 
 * include d-flip-flop subcircuit
 .include [ absolute path to d-flip-flop file ]
+
+* include one bit register subcircuit
+.include [ absolute path to one bit register file ]
