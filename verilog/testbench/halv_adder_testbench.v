@@ -7,7 +7,7 @@ module half_adder_testbench;
     half_adder halv_Adder1(a, b, sum, carry);
 
     initial begin
-        $dumpfile("half_adder.vcd");
+        $dumpfile("half_adder_simulation.vcd");
         $dumpvars(0, half_adder_testbench);
 
         a = 0; b = 0;
