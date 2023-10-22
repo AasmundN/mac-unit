@@ -3,8 +3,9 @@
 module adder_8_bit_testbench;
     reg [7:0] a, b;
     wire [7:0] sum;
+    wire carry_out;
 
-    adder_8_bit adder_8_bit1(a, b, sum);
+    adder_8_bit adder_8_bit1(a, b, sum, carry_out);
 
     integer errors;
 
