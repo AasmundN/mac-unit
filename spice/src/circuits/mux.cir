@@ -1,9 +1,9 @@
 * MUX subcircuit
 .subckt MUX A B S OUT Vdd Vss
-   xAND1 S A 2 Vdd Vss AND
-   xAND2 1 B 3 Vdd Vss AND
+   * transmission gates
+   xTRANSMISSION_GATEIN1 A OUT S NOT_S Vdd Vss TRANSMISSION_GATE 
+   xTRANSMISSION_GATEIN2 B OUT NOT_S S Vdd Vss TRANSMISSION_GATE 
 
-   xOR 2 3 OUT Vdd Vss OR
-
-   xNOT S 1 Vdd Vss NOT
+   * create inverted S
+   xNOT S NOT_S Vdd Vss NOT
 .ends
