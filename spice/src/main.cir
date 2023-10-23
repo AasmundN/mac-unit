@@ -1,11 +1,12 @@
 * main circuit file
 .option gmin=1e-39
+.option temp=0
 
 * includes
 .include includes.cir
 
 * params
-.param supplyVoltage = 0.6
+.param supplyVoltage = 0.82
 
 .param clockPeriod = 10n
 .param clockHigh = 5n
@@ -19,7 +20,7 @@ V_CLK CLK 0 PULSE(0, supplyVoltage, 0n, riseTime, fallTime, clockHigh, clockPeri
 
 V_IN IN 0 PULSE(0, supplyVoltage, 7n, riseTime, fallTime, 14n, 30n)
 
-V_EN EN 0 PULSE(0, supplyVoltage, 17n, riseTime, fallTime, 56n, 80n)
+V_EN EN 0 PULSE(0, supplyVoltage, 0n, riseTime, fallTime, 56n, 80n)
 V_RESET RESET 0 PULSE(0, supplyVoltage, 64n, riseTime, fallTime, 30n, 120n)
 
 xONE_BIT_REGISTER IN OUT EN RESET CLK Vdd 0 ONE_BIT_REGISTER
