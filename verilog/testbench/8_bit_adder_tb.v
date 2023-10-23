@@ -1,6 +1,6 @@
 `include "../src/8_bit_adder.v"
 
-module adder_8_bit_testbench;
+module adder_8_bit_tb;
     reg [7:0] a, b;
     wire [7:0] sum;
     wire carry_out;
@@ -11,8 +11,8 @@ module adder_8_bit_testbench;
 
     initial begin
         // Create a dump file for viewing simulation results
-        // $dumpfile("adder_8_bit_simulation.vcd");
-        // $dumpvars(0, adder_8_bit_testbench);
+        // $dumpfile("adder_8_bit_sim.vcd");
+        // $dumpvars(0, adder_8_bit_tb);
         
         $display("Checking for errors...");
         errors = 0;
