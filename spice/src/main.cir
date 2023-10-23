@@ -12,7 +12,7 @@
 .param clockHigh = 5n
 
 .param riseTime = 0.1n
-.param fallTime = 0.1N
+.param fallTime = 0.1n
 
 * supply signals
 Vdd Vdd 0 supplyVoltage
