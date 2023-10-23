@@ -1,0 +1,255 @@
+$date
+	Mon Oct 23 18:15:00 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module d_flip_flop_tb $end
+$var wire 1 ! q $end
+$var reg 1 " clk $end
+$var reg 1 # d $end
+$scope module d_flip_flop $end
+$var wire 1 " clk $end
+$var wire 1 $ clk_bar $end
+$var wire 1 # d $end
+$var wire 1 ! q $end
+$var wire 1 % w1 $end
+$var wire 1 & w3 $end
+$var wire 1 ' w2 $end
+$scope module master $end
+$var wire 1 $ clk $end
+$var wire 1 " clk_bar $end
+$var wire 1 % d $end
+$var wire 1 ' q_bar $end
+$var wire 1 ( w0 $end
+$var wire 1 ) w1 $end
+$upscope $end
+$scope module slave $end
+$var wire 1 " clk $end
+$var wire 1 $ clk_bar $end
+$var wire 1 ' d $end
+$var wire 1 & q_bar $end
+$var wire 1 * w0 $end
+$var wire 1 + w1 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+x+
+x*
+0)
+0(
+1'
+x&
+0%
+1$
+1#
+0"
+x!
+$end
+#3
+1+
+1!
+0&
+1*
+0$
+1"
+#4
+1%
+0#
+#5
+0%
+1#
+#6
+1$
+0"
+#7
+1)
+0'
+1(
+1%
+0#
+#8
+0)
+1'
+0(
+0%
+1#
+#9
+1%
+0$
+0#
+1"
+#12
+0)
+0%
+1$
+1*
+1'
+1#
+0(
+0"
+#14
+1)
+0'
+1(
+1%
+0#
+#15
+0+
+0!
+0%
+0$
+1&
+1#
+0*
+1"
+#18
+1)
+1%
+1$
+0*
+0'
+0#
+1(
+0"
+#19
+0)
+1'
+0(
+0%
+1#
+#21
+1+
+1!
+1%
+0$
+0&
+0#
+1*
+1"
+#22
+0%
+1#
+#24
+1)
+0'
+1(
+1%
+1$
+0#
+0"
+#25
+0)
+1'
+0(
+0%
+1#
+#27
+0$
+1"
+#28
+1%
+0#
+#29
+0%
+1#
+#30
+1$
+0"
+#31
+1)
+0'
+1(
+1%
+0#
+#32
+0)
+1'
+0(
+0%
+1#
+#33
+0$
+1"
+#34
+1%
+0#
+#35
+0%
+1#
+#36
+1$
+0"
+#38
+1)
+0'
+1(
+1%
+0#
+#39
+0+
+0!
+0%
+0$
+1&
+1#
+0*
+1"
+#41
+1%
+0#
+#42
+0)
+1'
+0(
+0%
+1$
+1#
+0"
+#44
+1)
+0'
+1(
+1%
+0#
+#45
+0%
+0$
+1#
+1"
+#48
+1)
+1%
+1$
+0*
+0'
+0#
+1(
+0"
+#49
+0)
+1'
+0(
+0%
+1#
+#51
+1+
+1!
+1%
+0$
+0&
+0#
+1*
+1"
+#52
+0%
+1#
