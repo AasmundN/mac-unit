@@ -1,9 +1,7 @@
-module d_latch (output q_bar, input d, input clk);
-    wire w0, w1, clk_bar;
+module d_latch (output q_bar, input d, input clk, input clk_bar);
+    wire w0, w1;
 
-    not notCLK (clk_bar, clk);
-
-    cmos switch1 (w0,d, clk, clk_bar);
+    cmos switch1 (w0, d, clk, clk_bar);
     cmos switch2 (w0, w1, clk_bar, clk);
 
     not not0 (q_bar, w0);
