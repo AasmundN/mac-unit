@@ -1,4 +1,4 @@
-`include "../src/full_adder.v"
+`include "full_adder.v"
 
 module adder_8_bit (
     input [7:0] a,
