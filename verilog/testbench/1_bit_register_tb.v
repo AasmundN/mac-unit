@@ -5,11 +5,11 @@ module one_bit_register_tb;
     wire out;
 
     // delay0 and delay1 are used to randomize the enable and in signals
-    reg [1:0] delay0;
-    reg [1:0] delay1;
+    reg [2:0] delay0;
+    reg [2:0] delay1;
 
     initial clk = 0;
-    initial in = 0;
+    initial in = 1;
     initial enable = 0;
     initial reset = 1;
 
@@ -26,7 +26,7 @@ module one_bit_register_tb;
         #10 in = 1;
         #2 reset = 0;
 
-        for (i = 0; i < 5; i = i + 1) begin
+        for (i = 0; i < 10; i = i + 1) begin
             delay0 = $random;
             delay1 = $random;
             #(delay0) enable = ~enable;
@@ -34,8 +34,10 @@ module one_bit_register_tb;
         end
 
         #2
+        in = 1; enable = 1;
+        #2
         reset = 1;
-        #5
+        #10
         $finish;
     end
 endmodule
