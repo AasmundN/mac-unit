@@ -7,8 +7,8 @@ module full_adder_tb;
     full_adder full_adder1(a, b, carry_in, sum, carry_out);
 
     initial begin
-        // $dumpfile("full_adder_sim.vcd");
-        // $dumpvars(0, full_adder_tb);
+        $dumpfile("full_adder_sim.vcd");
+        $dumpvars(0, full_adder_tb);
 
         a = 0; b = 0; carry_in = 0;
         #1

@@ -11,8 +11,8 @@ module adder_8_bit_tb;
 
     initial begin
         // Create a dump file for viewing simulation results
-        // $dumpfile("adder_8_bit_sim.vcd");
-        // $dumpvars(0, adder_8_bit_tb);
+        $dumpfile("adder_8_bit_sim.vcd");
+        $dumpvars(0, adder_8_bit_tb);
         
         $display("Checking for errors...");
         errors = 0;

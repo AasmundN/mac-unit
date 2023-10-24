@@ -28,8 +28,8 @@ module eight_bit_register_tb;
     integer i;
 
     initial begin
-        // $dumpfile("eight_bit_register_sim.vcd");
-        // $dumpvars(0, eight_bit_register_tb);
+        $dumpfile("eight_bit_register_sim.vcd");
+        $dumpvars(0, eight_bit_register_tb);
 
         for(i = 0; i < 48; i = i + 1) begin
             delay = $random;

@@ -7,8 +7,8 @@ module half_adder_tb;
     half_adder halv_Adder1(a, b, sum, carry);
 
     initial begin
-        // $dumpfile("half_adder_sim.vcd");
-        // $dumpvars(0, half_adder_tb);
+        $dumpfile("half_adder_sim.vcd");
+        $dumpvars(0, half_adder_tb);
 
         a = 0; b = 0;
         #1

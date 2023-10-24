@@ -20,8 +20,8 @@ module one_bit_register_tb;
     integer i;
 
     initial begin
-        // $dumpfile("one_bit_register_sim.vcd");
-        // $dumpvars(0, one_bit_register_tb);
+        $dumpfile("one_bit_register_sim.vcd");
+        $dumpvars(0, one_bit_register_tb);
 
         #10 in = 1;
         #2 reset = 0;
