@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # CONSTANTS
-VDD = 0.82
+VDD = 0.51
 PERIOD = 10e-9
 GRAPH_SHIFT = 0.1
 

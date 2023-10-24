@@ -6,7 +6,7 @@
 .include includes.cir
 
 * params
-.param supplyVoltage = 0.82
+.param supplyVoltage = 0.51
 
 .param clockPeriod = 10n
 .param clockHigh = 5n

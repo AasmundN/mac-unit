@@ -1,5 +1,5 @@
-.param L = 300n 
-.param W = 1500n
+.param L = 150n 
+.param W = 150n
 
 * NOT gate
 .subckt NOT A Q Vdd Vss
