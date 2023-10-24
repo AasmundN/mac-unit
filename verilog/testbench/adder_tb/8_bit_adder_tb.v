@@ -1,4 +1,4 @@
-`include "../src/8_bit_adder.v"
+`include "../../src/adder/8_bit_adder.v"
 
 module adder_8_bit_tb;
     reg [7:0] a, b;

@@ -1,4 +1,4 @@
-`include "../src/full_adder.v"
+`include "../../src/adder/full_adder.v"
 
 module full_adder_tb;
     reg a, b, carry_in;

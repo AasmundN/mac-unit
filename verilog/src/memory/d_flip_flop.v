@@ -1,4 +1,4 @@
-`include "d_latch.v"
+`include "../../src/memory/d_latch.v"
 
 module d_flip_flop (output q, input d, input clk);
     wire w1, w2, w3, clk_bar;

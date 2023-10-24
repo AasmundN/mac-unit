@@ -1,4 +1,4 @@
-`include "../src/two_bit_multiplier.v"
+`include "../../src/multiplier/two_bit_multiplier.v"
 
 module two_bit_multiplier_tb;
     reg [1:0] a, b;

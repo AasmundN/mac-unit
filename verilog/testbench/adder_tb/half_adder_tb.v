@@ -1,4 +1,4 @@
-`include "../src/half_adder.v"
+`include "../../src/adder/half_adder.v"
 
 module half_adder_tb;
     reg a, b;

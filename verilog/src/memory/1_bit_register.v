@@ -1,5 +1,5 @@
-`include "d_flip_flop.v"
-`include "../multiplexer/2_to_1_mux.v"
+`include "../../src/memory/d_flip_flop.v"
+`include "../../src/multiplexer/2_to_1_mux.v"
 
 module one_bit_register (output out, input in, input enable, input reset, input clk);
     wire w0, w1, w3;

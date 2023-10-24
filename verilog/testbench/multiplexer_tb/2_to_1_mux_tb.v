@@ -1,4 +1,4 @@
-`include "../src/2_to_1_mux.v"
+`include "../../src/multiplexer/2_to_1_mux.v"
 
 module two_to_one_mux_tb;
     reg a, b, select;
@@ -7,8 +7,8 @@ module two_to_one_mux_tb;
     two_to_one_mux mux (q, a, b, select);
 
     initial begin
-        $dumpfile("two_to_one_mux_sim.vcd");
-        $dumpvars(0, two_to_one_mux_tb);
+        // $dumpfile("two_to_one_mux_sim.vcd");
+        // $dumpvars(0, two_to_one_mux_tb);
 
         a = 0; b = 0; select = 0;
         #1

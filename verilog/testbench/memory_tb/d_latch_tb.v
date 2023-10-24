@@ -1,4 +1,4 @@
-`include "../src/d_latch.v"
+`include "../../src/memory/d_latch.v"
 
 module d_latch_tb;
     reg d, clk, clk_bar;
@@ -14,8 +14,8 @@ module d_latch_tb;
     always #5 clk_bar = ~clk;
 
     initial begin
-        $dumpfile("d_latch_sim.vcd");
-        $dumpvars(0, d_latch_tb);
+        // $dumpfile("d_latch_sim.vcd");
+        // $dumpvars(0, d_latch_tb);
 
         d = 0;
         #2

@@ -1,4 +1,4 @@
-`include "../src/d_flip_flop.v"
+`include "../../src/memory/d_flip_flop.v"
 
 module d_flip_flop_tb;
     reg d, clk;
@@ -12,8 +12,8 @@ module d_flip_flop_tb;
     always #3 clk = ~clk;
 
     initial begin
-        $dumpfile("d_flip_flop_sim.vcd");
-        $dumpvars(0, d_flip_flop_tb);
+        // $dumpfile("d_flip_flop_sim.vcd");
+        // $dumpvars(0, d_flip_flop_tb);
 
         #4
         d = 0;
