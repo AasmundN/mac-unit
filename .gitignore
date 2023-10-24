@@ -2,6 +2,8 @@
 includes.cir
 
 main.windows.cir
-*.log
 
+*.log
 *.out
+
+verilog/simulations
