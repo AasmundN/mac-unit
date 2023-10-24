@@ -1,0 +1,63 @@
+$date
+	Tue Oct 24 10:42:26 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module two_to_one_mux_tb $end
+$var wire 1 ! q $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$var reg 1 $ select $end
+$scope module mux $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 ! q $end
+$var wire 1 $ select $end
+$var wire 1 % select_bar $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1%
+0$
+0#
+0"
+0!
+$end
+#1
+0%
+1$
+#2
+1%
+1!
+0$
+1#
+#3
+0%
+0!
+1$
+#4
+1%
+0$
+0#
+0!
+1"
+#5
+0%
+1!
+1$
+#6
+1%
+0$
+1#
+#7
+0%
+1$
