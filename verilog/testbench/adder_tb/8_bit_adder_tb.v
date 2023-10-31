@@ -1,6 +1,9 @@
 `include "../../src/adder/8_bit_adder.v"
 
 module adder_8_bit_tb;
+    // Note: This testbench has not been updated for the zero-input changes to the 8-bit adder.
+    // See commit SHA-9103475 for changes.
+
     reg [7:0] a, b;
     wire [7:0] sum;
     wire carry_out;
