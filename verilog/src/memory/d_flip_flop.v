@@ -1,5 +1,8 @@
 `include "../../src/memory/d_latch.v"
 
+`ifndef D_FLIP_FLOP_V
+`define D_FLIP_FLOP_V
+
 module d_flip_flop (output q, input d, input clk);
     wire w1, w2, w3, clk_bar;
 
@@ -15,3 +18,5 @@ module d_flip_flop (output q, input d, input clk);
     // output not gate
     not (q, w3);
 endmodule
+
+`endif // D_FLIP_FLOP_V
