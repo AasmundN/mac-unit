@@ -14,7 +14,7 @@ The primary directories are *spice* and *verilog*. Under Spice, you will find al
     - **src** - Simulation code, transistor design of circuits, and model parameters used.
 
  ## Running Verilog Code
- The Verilog code can be run in Active-HDL or VS Code. Begin with cloning the repository do your desired directory:
+ The Verilog code can be run in Active-HDL or VS Code using Icarus Verilog. Begin with cloning the repository do your desired directory:
  ```
 git clone https://github.com/AasmundN/mac-unit.git
 ```
