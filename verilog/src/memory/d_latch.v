@@ -1,3 +1,6 @@
+`ifndef D_LATCH_V
+`define D_LATCH_V
+
 module d_latch (output q_bar, input d, input clk, input clk_bar);
     wire w0, w1;
 
@@ -7,3 +10,5 @@ module d_latch (output q_bar, input d, input clk, input clk_bar);
     not not0 (q_bar, w0);
     not not1 (w1, q_bar);
 endmodule
+
+`endif // D_LATCH_V
